@@ -213,6 +213,17 @@ const about: About = {
       },
     ],
   },
+  certifications: {
+    display: true, // set to false to hide this section
+    title: "Certifications",
+    items: [
+      {
+        name: "Google Cloud Certified Professional Cloud Developer",
+        issuer: "Google Cloud",
+        link: "https://www.credly.com/badges/a3ce2a12-f8b8-4d7e-bc5b-2909af19e454/public_url",
+      },
+    ],
+  },
   technical: {
     display: true, // set to false to hide this section
     title: "Technical Skills",

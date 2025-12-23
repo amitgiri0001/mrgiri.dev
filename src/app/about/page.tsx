@@ -6,6 +6,7 @@ import {
   Icon,
   IconButton,
   Media,
+  SmartLink,
   Tag,
   Text,
   Meta,
@@ -43,6 +44,11 @@ export default function About() {
       title: about.work.title,
       display: about.work.display,
       items: about.work.experiences.map((experience) => experience.company),
+    },
+    {
+      title: about.certifications?.title ?? "Certifications",
+      display: about.certifications?.display ?? false,
+      items: about.certifications?.items?.map((cert) => cert.name) ?? [],
     },
     {
       title: about.studies.title,
@@ -152,6 +158,20 @@ export default function About() {
             >
               {person.role}
             </Text>
+            <Row 
+              className={styles.blockAlign} 
+              paddingTop="8" 
+              gap="8" 
+              vertical="center"
+              horizontal="center"
+              fitWidth
+            >
+              <SmartLink href="https://www.credly.com/badges/a3ce2a12-f8b8-4d7e-bc5b-2909af19e454/public_url">
+                <Tag size="m" variant="brand" style={{ cursor: 'pointer' }}>
+                  Google Cloud Certified Professional Cloud Developer
+                </Tag>
+              </SmartLink>
+            </Row>
             {social.length > 0 && (
               <Row
                 className={styles.blockAlign}
@@ -319,6 +339,28 @@ export default function About() {
                         ))}
                       </Row>
                     )}
+                  </Column>
+                ))}
+              </Column>
+            </>
+          )}
+
+          {about.certifications?.display && (
+            <>
+              <Heading as="h2" id={about.certifications.title} variant="display-strong-s" marginBottom="m">
+                {about.certifications.title}
+              </Heading>
+              <Column fillWidth gap="l" marginBottom="40">
+                {about.certifications.items.map((cert, index) => (
+                  <Column key={`${cert.name}-${index}`} fillWidth gap="4">
+                    <SmartLink href={cert.link}>
+                      <Text id={cert.name} variant="heading-strong-l">
+                        {cert.name}
+                      </Text>
+                    </SmartLink>
+                    <Text variant="heading-default-xs" onBackground="neutral-weak">
+                      {cert.issuer}
+                    </Text>
                   </Column>
                 ))}
               </Column>

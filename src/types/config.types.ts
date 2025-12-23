@@ -142,9 +142,13 @@ export type SchemaConfig = {
  * Social links for organization.
  */
 export type SameAsConfig = {
-  threads: string;
-  linkedin: string;
-  discord: string;
+  github?: string;
+  linkedin?: string;
+  substack?: string;
+  threads?: string;
+  discord?: string;
+  twitter?: string;
+  instagram?: string;
 };
 
 /**

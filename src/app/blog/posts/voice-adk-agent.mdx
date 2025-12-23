@@ -1,0 +1,73 @@
+---
+title: "Voice ADK Agent: AI-Powered Podcast Producer"
+subtitle: "Building an AI agent that researches news and generates podcast audio"
+summary: "An AI-powered voice agent built with Google ADK that researches AI news for NASDAQ-listed companies, enriches findings with financial data, and generates multi-speaker podcast audio content."
+image: "/images/blog/AI-podcast.png"
+publishedAt: "2025-11-15"
+tag: "AI"
+---
+
+## Overview
+
+This project demonstrates the evolution of a voice agent system, progressing from simple implementations to a sophisticated multi-agent orchestration system. The latest version is a complete AI news podcast producer that:
+
+- 🔍 Researches the latest AI news for NASDAQ-listed US companies
+- 📊 Enriches news with real-time financial context (stock prices, market changes)
+- 📝 Compiles structured research reports in Markdown format
+- 🎙️ Generates multi-speaker podcast audio using Google's Gemini TTS
+- ✅ Enforces data quality through source whitelisting and freshness filters
+
+## Features
+
+### Intelligent News Research
+- Searches for AI news specifically about NASDAQ-listed companies
+- Filters sources through a whitelist (TechCrunch, VentureBeat, The Verge, etc.)
+- Enforces data freshness (last week's news)
+
+### Financial Context Enrichment
+- Automatically extracts company tickers from news
+- Fetches real-time stock prices and market changes using `yfinance`
+- Gracefully handles missing data without halting the process
+
+### Multi-Speaker Podcast Generation
+- Converts research reports into conversational podcast scripts
+- Features two hosts: 'Joe' (enthusiastic) and 'Jane' (analytical)
+- Generates high-quality audio using Gemini's multi-speaker TTS
+- Saves output as WAV files
+
+## Agent Workflow
+
+1. **Acknowledgment**: Agent confirms the task
+2. **Search**: Finds relevant AI news from whitelisted sources
+3. **Extract**: Identifies companies and stock tickers
+4. **Enrich**: Fetches financial data for identified tickers
+5. **Structure**: Organizes data using `AINewsReport` schema
+6. **Save**: Writes formatted Markdown report
+7. **Script**: Creates conversational podcast script
+8. **Generate**: Produces multi-speaker audio file
+9. **Confirm**: Reports completion to user
+
+## Tech Stack
+
+- **Google ADK** (Agent Development Kit) >= 1.15.0
+- **yfinance** for financial data retrieval
+- **Pydantic** for data validation and modeling
+- **uv** for fast Python package management
+
+## Setup
+
+```bash
+# Install uv if you haven't already
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Install project dependencies
+uv sync
+
+# Run the agent
+uv run python your_script.py
+```
+
+---
+
+*View the source code on [GitHub](https://github.com/amitgiri0001/voice-adk-agent)*
+

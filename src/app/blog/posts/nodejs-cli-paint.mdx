@@ -1,0 +1,65 @@
+---
+title: "NodeJs CLI Paint"
+subtitle: "A terminal-based paint application built with TypeScript"
+summary: "A basic TypeScript-based solution to provide paint-like features through the command line. Create canvases, draw lines, rectangles, and fill colors - all from your terminal."
+image: "/images/blog/cli-paint.png"
+publishedAt: "2021-07-09"
+tag: "CLI"
+---
+
+## About
+
+NodeJs CLI Paint is a terminal-based drawing application that brings paint-like features to your command line. Built with TypeScript, it provides an interactive way to create and manipulate drawings right in your terminal.
+
+## Features
+
+### Create Canvas
+Enter the height and width of the canvas to create a virtual canvas. The canvas is rendered using ASCII characters, giving you a visual representation of your drawing area.
+
+### Drawing Options
+
+After creating a canvas, you have several options to play around with:
+
+- **Line**: With the given coordinates of `x1`, `y1` as starting point and `x2`, `y2` as end, the line will be plotted inside the canvas accordingly.
+  
+- **Rectangle**: Similar to line coordinates, the rectangle will be plotted from top left corner (`x1`, `y1`) to bottom right corner (`x2`, `y2`).
+
+- **Color Fill**: Choose a character to paint with. The `x1` and `y1` coordinates decide which section will be painted. The behavior is similar to any other painting application - it respects the borders and does not overflow the color.
+
+### Seamless Navigation
+You can re-create a new canvas or quit seamlessly at any point during the session.
+
+## Tech Stack
+
+- **TypeScript** for type-safe development
+- **Node.js** for runtime
+- Interactive CLI prompts for user input
+
+## Getting Started
+
+### Installation
+
+```bash
+npm i
+```
+
+### Start
+
+```bash
+npm start
+```
+
+### Run Tests
+
+```bash
+npm test
+```
+
+## Topics
+
+`nodejs` `javascript` `cli` `drawing` `typescript` `canvas` `terminal-based`
+
+---
+
+*View the source code on [GitHub](https://github.com/amitgiri0001/nodejs-cli-paint)*
+

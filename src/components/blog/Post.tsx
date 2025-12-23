@@ -51,6 +51,13 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
           <Text variant="heading-strong-l" wrap="balance">
             {post.metadata.title}
           </Text>
+          {post.metadata.summary && (
+            <Text variant="body-default-s" onBackground="neutral-medium" wrap="balance">
+              {post.metadata.summary.length > 120 
+                ? post.metadata.summary.substring(0, 120) + "..." 
+                : post.metadata.summary}
+            </Text>
+          )}
           {post.metadata.tag && (
             <Text variant="label-strong-s" onBackground="neutral-weak">
               {post.metadata.tag}

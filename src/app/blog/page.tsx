@@ -1,7 +1,6 @@
-import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
-import { Mailchimp } from "@/components";
+import { Column, Heading, Meta, Schema, Row, Text, Button, Icon } from "@once-ui-system/core";
 import { Posts } from "@/components/blog/Posts";
-import { baseURL, blog, person, newsletter } from "@/resources";
+import { baseURL, blog, person } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -32,14 +31,33 @@ export default function Blog() {
       <Heading marginBottom="l" variant="heading-strong-xl" marginLeft="24">
         {blog.title}
       </Heading>
+      
+      {/* External Links Section */}
+      <Column fillWidth gap="16" marginBottom="xl" paddingX="24">
+        <Text variant="heading-strong-l">Find me elsewhere</Text>
+        <Row gap="16" wrap>
+          <Button
+            href="https://mrgiri.substack.com"
+            variant="secondary"
+            size="m"
+            prefixIcon="substack"
+          >
+            Substack
+          </Button>
+          <Button
+            href="https://github.com/amitgiri0001"
+            variant="secondary"
+            size="m"
+            prefixIcon="github"
+          >
+            GitHub Projects
+          </Button>
+        </Row>
+      </Column>
+
       <Column fillWidth flex={1} gap="40">
-        <Posts range={[1, 1]} thumbnail />
-        <Posts range={[2, 3]} columns="2" thumbnail direction="column" />
-        <Mailchimp marginBottom="l" />
-        <Heading as="h2" variant="heading-strong-xl" marginLeft="l">
-          Earlier posts
-        </Heading>
-        <Posts range={[4]} columns="2" />
+        <Posts range={[1, 2]} thumbnail />
+        <Posts range={[3]} columns="2" thumbnail direction="column" />
       </Column>
     </Column>
   );

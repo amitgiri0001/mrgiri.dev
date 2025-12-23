@@ -2,20 +2,20 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Amit",
+  lastName: "Giri",
+  name: "Amit Giri",
+  role: "Senior Software Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "amit.giri0001@gmail.com",
+  location: "Asia/Singapore", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  languages: ["English", "Hindi"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  description: <>I write on Substack at mrgiri.substack.com</>,
 };
 
 const social: Social = [
@@ -25,25 +25,19 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/amitgiri0001",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/amitgiri0001",
     essential: true,
   },
   {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    name: "Substack",
+    icon: "substack",
+    link: "https://mrgiri.substack.com",
     essential: true,
   },
   {
@@ -60,23 +54,23 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Hi, I'm Amit Giri (Mr. Giri)</>,
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Featured</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
-          Featured work
+          Project
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
+    Developer, creator, and builder of AI-powered web experiences.
 </>
   ),
 };
@@ -95,16 +89,21 @@ const about: About = {
   },
   calendar: {
     display: true,
-    link: "https://cal.com",
+    link: "https://calendar.app.google/pdTavc8AG9o8wv916",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Senior Software Engineer with 11+ years of experience designing, scaling, and operating 
+        business-critical backend systems across retail, healthcare, and media. Strong expertise 
+        in distributed systems, API design, cloud-native architectures (GCP, AWS), and backend 
+        performance optimization using Golang and Node.js. Proven track record in leading system 
+        design initiatives, defining SLI/SLOs and error budgets, improving infrastructure cost 
+        efficiency, and building internal developer platforms. Known for translating complex 
+        business requirements into reliable, scalable, and cost-effective backend solutions 
+        while mentoring engineers and influencing technical direction across teams.
       </>
     ),
   },
@@ -113,41 +112,87 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "NTUC Enterprise (FairPrice)",
+        timeframe: "Apr 2022 - Present",
+        role: "Senior Product Engineer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Led backend and platform architecture for a multi-vendor retail marketplace supporting 
+            seller onboarding, logistics, cart, checkout, and order management on GCP.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Delivered a low-latency backend enabling <strong>1-hour delivery</strong> by redesigning cart 
+            and checkout workflows to meet strict SLAs.
+          </>,
+          <>
+            Defined and owned <strong>SLIs, SLOs, and error budgets</strong> for critical services, guiding 
+            release decisions and incident response.
+          </>,
+          <>
+            Optimized cloud infrastructure costs by right-sizing resources, eliminating over-provisioning, 
+            and migrating services to <strong>GCP Cloud Run</strong>.
+          </>,
+          <>
+            Built <strong>DiffMind</strong>, an AI-powered internal code review assistant integrated with 
+            Bitbucket to automate PR reviews for quality, security, and best practices.
+          </>,
+          <>
+            Developed an internal API documentation platform to automatically generate, version, and 
+            publish service contracts as a single source of truth.
+          </>,
+          <>
+            Designed and implemented a secure RBAC-based SSO platform for 150+ sellers with zero 
+            production security incidents.
+          </>,
+          <>
+            Reduced Lead Time for Changes from 9.7 days to 5.1 days (<strong>~47% improvement</strong>) through 
+            CI/CD improvements, contract testing, and feature flags.
+          </>,
+          <>
+            Mentored engineers, conducted technical interviews, and contributed to cross-team 
+            architectural reviews to improve engineering effectiveness.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "MyDoc Healthcare",
+        timeframe: "Jun 2019 - Mar 2022",
+        role: "Senior Software Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Designed and implemented scalable, multi-region payment systems integrating 
+            STRIPE and RAPYD.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Led the migration from monolithic legacy systems to microservices, improving 
+            scalability and deployment velocity.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Isentia",
+        timeframe: "Aug 2017 - Jun 2019",
+        role: "Software Engineer (Full Stack)",
+        achievements: [
+          <>
+            Built backend services and full-stack features using Node.js, React, and AWS.
+          </>,
+          <>
+            Designed high-availability AWS architectures and optimized ElasticSearch indexes.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "Earlier Career",
+        timeframe: "2013 - 2017",
+        role: "Xcdify Solutions, QSI (NextGen Healthcare), Emids",
+        achievements: [
+          <>
+            Early-career roles focused on frontend engineering and established a strong foundation 
+            in scalable web application development.
           </>,
         ],
         images: [],
@@ -156,77 +201,99 @@ const about: About = {
   },
   studies: {
     display: true, // set to false to hide this section
-    title: "Studies",
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Bachelor of Engineering — Information Technology",
+        description: <>Bhilai Institute of Technology (BIT), Durg</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Diploma — Information Technology",
+        description: <>Govt. Polytechnic, Durg</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
+        title: "Backend & Architecture",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Distributed Systems, Microservices Architecture, System Design, RESTful API Design, Contract Testing, Backend Performance Optimization.</>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "Golang" },
+          { name: "Node.js" },
+          { name: "TypeScript" },
+          { name: "JavaScript" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "Cloud & Infrastructure",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Google Cloud Platform (GCP), Amazon Web Services (AWS), Cloud Run, Kubernetes, Docker, Infrastructure Cost Optimization & Capacity Right-Sizing.</>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "GCP" },
+          { name: "AWS" },
+          { name: "Docker" },
+          { name: "Kubernetes" },
+          { name: "GitHub Actions" },
+          { name: "Bitbucket Pipelines" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Reliability Engineering",
+        description: (
+          <>SLI/SLO Definition & Ownership, Error Budget Management, Observability, Incident Response, Automated Rollbacks.</>
+        ),
+        tags: [
+          { name: "Datadog" },
+          { name: "Feature Flags" },
+          { name: "Split.io" },
         ],
+        images: [],
+      },
+      {
+        title: "Data & Storage",
+        description: (
+          <>PostgreSQL, MySQL, CockroachDB, DynamoDB, ElasticSearch.</>
+        ),
+        tags: [
+          { name: "PostgreSQL" },
+          { name: "MySQL" },
+          { name: "DynamoDB" },
+          { name: "ElasticSearch" },
+        ],
+        images: [],
+      },
+      {
+        title: "Security & Access Control",
+        description: (
+          <>SSO, OAuth2, RBAC, ABAC, Auth0.</>
+        ),
+        tags: [
+          { name: "SSO" },
+          { name: "OAuth2" },
+          { name: "RBAC" },
+          { name: "Auth0" },
+        ],
+        images: [],
+      },
+      {
+        title: "Developer Productivity",
+        description: (
+          <>Internal Platforms & Tooling, API Governance & Documentation Systems, AI-assisted Engineering Tools, MCP-based Developer Tooling.</>
+        ),
+        tags: [
+          { name: "AI Tools" },
+          { name: "MCP" },
+          { name: "Internal Platforms" },
+        ],
+        images: [],
       },
     ],
   },
@@ -235,8 +302,8 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
+  title: "Writing about tech and engineering...",
+  description: `Read what ${person.name} has been thinking about`,
   // Create new blog posts by adding a new .mdx file to app/blog/posts
   // All posts will be listed on the /blog route
 };
@@ -245,7 +312,7 @@ const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
+  description: `Engineering projects by ${person.name}`,
   // Create new project pages by adding a new .mdx file to app/blog/posts
   // All projects will be listed on the /home and /work routes
 };

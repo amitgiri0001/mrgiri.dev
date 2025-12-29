@@ -1,0 +1,37 @@
+---
+title: "The Envoy Redis Proxy Experiment: Lessons from a Dead End"
+publishedAt: "2025-12-29"
+summary: "Exploring Envoy as a Redis gateway for cross-project GCP connectivity and the lessons learned from hitting unexpected limitations."
+image: "/images/blog/envoy-redis-proxy.jpg"
+tag: "Engineering"
+---
+
+Sometimes the simplest requirements reveal unexpected complexities. This post documents my journey trying to connect a new GCP service to an existing Redis instance across project boundaries using Envoy as a proxy.
+
+## The Challenge
+
+The new service lived in a **different GCP project** than the existing Redis instance. VPC Peering wasn't viable due to transitive connection limitations, and VPN setup would have required approvals that delayed our timeline.
+
+## The Solution Attempt
+
+I decided to try **Envoy as a Kubernetes-based Redis gateway**. Envoy is a high-performance, open-source proxy often used for service-to-service communication. Its ability to route traffic, handle retries, and expose metrics made it a compelling choice.
+
+The setup included:
+- Kubernetes Deployment with Envoy
+- Redis proxy configuration with prefix routing
+- Horizontal Pod Autoscaler for varying workloads
+- Internal LoadBalancer for service exposure
+
+## The Discovery
+
+Everything worked until I hit a critical limitation: the Redis instance used **database index 8**. Envoy's Redis proxy currently **does not support selecting database indexes**.
+
+## Lessons Learned
+
+1. **Technical elegance vs organizational constraints** - Sometimes the "perfect" architecture isn't practical
+2. **Validate assumptions early** - Even robust tools can have subtle limitations
+3. **Pragmatic workarounds are part of engineering** - Temporary solutions can maintain momentum
+4. **Observability matters** - Integrating metrics and logs early made issue detection easier
+
+[Read the full article on Substack →](https://mrgiri.substack.com/p/the-envoy-redis-proxy-experiment)
+
